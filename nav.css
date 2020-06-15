@@ -1,0 +1,207 @@
+@import url('hamburger.css');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;500;700;800;900&family=Megrim&display=swap');
+body {
+    background: url("astronaut.jpg") center fixed, linear-gradient(190deg, #ccc, #ccf);
+    background-size: cover;
+        font-family: 'Kanit', sans-serif;
+}
+* {
+    text-decoration: none;
+    color:#f3f3f3;
+}
+section {
+    max-width: 90vw;
+    margin-top: 10%;
+    font-weight: 200;
+
+}
+button.hamburger:focus {
+    outline:none;
+}
+.container {
+    max-width: 100vw;
+    width: 100%;
+    display: flex;
+}
+/*top navbar*/
+.header {
+    position: fixed;
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    height:5.2em;
+    margin:-0.5em;
+}
+.header-bg {
+    position: absolute;
+    margin:0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    transform: scaleY(0);
+    background-color: #000;
+}
+
+.header-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: left;
+}
+.logo {
+    position: relative;
+    max-width:15%;
+    padding: 0;
+    margin:2% 0 -4% 2%;
+    z-index: 100;
+    font-size: 2em;
+    font-weight: 800;
+    font-family: 'Megrim', sans-serif;
+}
+.nav-links a {
+    position: relative;
+    transition: color .25s ease;
+}
+.nav-links {
+    position: relative;
+    display:flex;
+    width: 75%;
+    padding: 0;
+    justify-content: left;
+    margin:2% 0 0 15%;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 400;
+    list-style-type: none;
+}
+#navbar {
+    width:95%;
+    list-style-type: none;
+}
+#navbar .nav-item {
+    margin: 0 0.7em;
+}
+/*nav links underline hover animation*/
+#navbar .nav-links li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #f3f3f3;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform .6s;
+}
+#navbar .nav-links li a:hover:after {
+    transition-duration: .4s;
+    transform: scaleX(1);
+    transform-origin: left center
+}
+/*nav links animation end*/
+/*side nav menu*/
+#side-menu {
+    position: fixed;
+    top:0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background:#000;
+    transition: cubic-bezier(.42,.33,.3,.83) 0.6s;
+}
+
+#side-menu-nav {
+    width: 200px;
+    height: 100vh;
+    margin: 20% 15%;
+}
+/*end*/
+ #side-menu-nav .nav-links {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    margin: 0;
+    opacity: 0;
+}
+#side-menu-nav .nav-links li {
+    padding: 0.5em 0;
+    text-align: right;
+    border-bottom: 1pt solid #252525;
+}
+
+#side-menu-nav .nav-links li.primary {
+    display: none;
+}
+
+#side-menu-nav .nav-links a {
+    width: inherit;
+    font-weight: 200;
+    font-size: 1.2em;
+    color: #fff;
+}
+@media (max-width: 960px){
+    #navbar .nav-links {
+        display:none;
+    }
+    .logo {
+        margin: 2% 55% -4%;
+    }
+    #side-menu-nav .nav-links li.primary {
+    display: flex;
+    flex-direction: column;
+    }
+
+}
+/*ANIMATIONS*/
+
+@keyframes slide-from-top {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+      }
+}
+@keyframes nav-bg-slide-down{
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+            transform:scaleY(1);
+    }
+
+}
+@keyframes nav-bg-slide-up{
+    100% {
+        transform: scaleY(0);
+    }
+    0% {
+        transform:scaleY(1);
+    }
+
+}
+/*animation classes ----- toggled by JS*/
+/*top to bottom sliding animation*/
+.slide-from-top {
+    animation: slide-from-top 1s ease-in-out 0.1s forwards;
+}
+/*side nav slide out*/
+.side-menu-visible {
+    width:280px!important;
+}
+/*to nav sliding up and down*/
+.header-bg-slide-down{
+    animation: nav-bg-slide-down 0.6s cubic-bezier(.42,.33,.3,.83) 0.1s forwards;
+    transform-origin: top;
+    transition: transform;
+}
+.header-bg-slide-up{
+    animation: nav-bg-slide-up 0.8s cubic-bezier(.42,.33,.3,.83) 0.1s backwards;
+    transform-origin: top;
+    transition: transform;
+}

@@ -1,0 +1,523 @@
+@import url('hamburger.css');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;500;700;800;900&family=Megrim&display=swap');
+/*CSS RESETS*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: 1em;
+  font-weight: 300;
+  font-style: normal;
+ -webkit-font-smoothing: antialiased;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*Base Styles*/
+
+body {
+    background: #000;
+    font-family: 'Kanit', sans-serif;
+    color:#f3f3f3;
+}
+
+button.hamburger:focus {
+    outline:none;
+}
+.container, main {
+    max-width: 100vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/*top navbar*/
+.header {
+    position: fixed;
+    z-index: 5;
+    display:flex;
+    flex-direction: row;
+    width:100vw;
+    height:5.2em;
+    margin:-0.5em;
+}
+.header-bg {
+    position: absolute;
+    margin:0;
+    width: inherit;
+    height: 100%;
+    will-change: transform;
+    transform: scaleY(0);
+    background-color: #000;
+}
+.header-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 87.5em;
+    margin: 0 auto;
+    text-align: left;
+}
+.logo {
+    position: relative;
+    max-width:15%;
+    padding: 0;
+    margin:2% 0 -4% 2%;
+    z-index: 100;
+    font-size: 2em;
+    font-weight: 800;
+    font-family: 'Megrim', sans-serif;
+}
+ul.nav-links {
+    position: relative;
+    display:flex;
+    width: 75%;
+    padding: 0;
+    justify-content: left;
+    margin: 1.2% 0 0 15%;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+.nav-links a {
+    position: relative;
+    transition: color .25s ease;
+    color:#f3f3f3;
+    text-decoration: none;
+}
+#navbar {
+    width:95%;
+    list-style-type: none;
+}
+#navbar .nav-item {
+    margin: 0 0.7em;
+}
+/*nav links underline hover animation*/
+#navbar .nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #f3f3f3;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform .6s;
+}
+#navbar .nav-links li a:hover::after {
+    transition-duration: .4s;
+    transform: scaleX(1);
+    transform-origin: left center
+}
+/*nav links animation end*/
+/*side nav menu*/
+#side-menu {
+    position: fixed;
+    top:0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background:#000;
+    transition: cubic-bezier(.42,.33,.3,.83) 0.6s;
+}
+#side-menu-nav {
+    width: 12.5em;
+    height: 100vh;
+    margin: 20% 15%;
+}
+/*end*/
+ #side-menu-nav .nav-links {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    margin: 0;
+    opacity: 0;
+}
+#side-menu-nav .nav-links li {
+    padding: 0.5em 0;
+    text-align: right;
+    border-bottom: 1pt solid #252525;
+}
+
+#side-menu-nav .nav-links li.primary {
+    display: none;
+}
+
+#side-menu-nav .nav-links a {
+    width: inherit;
+    font-weight: 200;
+    font-size: 1.2em;
+    color: #fff;
+}
+/*CONTENT*/
+.section {
+    position:relative;
+    display: flex;
+    height: 100vh;
+    width: inherit;
+}
+.section-inner, .background {
+    height: 101%;
+    width: 100%;
+}
+.section-inner h3, .section h1, .section a {
+    text-transform: uppercase;
+}
+.background {
+    position:absolute;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.section-inner {
+    position: relative;
+    margin: 0 auto;
+}
+/*.inner-center,.inner-center-bottom,.inner-center-top {
+    position: absolute;
+    margin-left: : 50%;
+    width: 90%;
+    max-width: 960px;
+    text-align: center
+}*/
+/*headings and buttons*/
+.inner-left-top {
+    position: absolute;
+    margin-bottom: 28%;
+    margin-left: 3.2em;
+}
+.inner-left-middle {
+    margin: 10% 0 0 3.2em;
+}
+.inner-left-bottom {
+    position: absolute;
+    margin-top: 28%;
+    margin-left: 3.2em;
+}
+.inner-right-top {
+    position: absolute;
+    margin-bottom: 28%;
+    margin-right: 3.2em;
+}
+.inner-right-middle {
+    margin: 15% 50%;
+}
+.inner-right-bottom {
+    position: absolute;
+    margin: 22% 3.2em 0 50%;
+}
+.inner-left-bottom,.inner-left-middle,.inner-left-top,.inner-right-bottom,.inner-right-middle,.inner-right-top {
+    text-align: left;
+    width: 50%;
+    max-width: 520px;
+}
+
+h1 {
+    font-size: 3.5em;
+    line-height: 1em;
+}
+h3 {
+    font-size: 1.45em;
+    font-weight: 400;
+}
+p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+p:first-of-type {
+    margin-top: 20px;
+}
+.section p {
+    margin-top:0.5em;
+}
+.video-container {
+    position:relative;
+    top: -60em;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    margin:0 3.2em 0 48%;
+    text-align: left;
+    vertical-align: top;
+}
+.video-container video {
+    width: 100%;
+    height: 90%;
+    margin-top:5%;
+    object-fit: cover;
+}
+.poster {
+        display: flex;
+        position:relative;
+        top: 35em;
+        width: 100%;
+        height: 60%;
+        padding: 0;
+        margin:28% 3.2em 0 0;
+        text-align: left;
+        vertical-align: top;
+        visibility: hidden;
+}
+/*backgrouns*/
+.feature .background {
+    background-image:linear-gradient(90deg, #0006 0%, #0003 100%), url(img/launch.jpg);
+}
+.dragon-crew .background {
+    background-image:linear-gradient(90deg, #0006 0%, #0004 100%), url(img/dragon-crew.jpg);
+}
+.lunar-starship .background {
+    background-image:linear-gradient(90deg, #0006 0%, #0004 100%), url(img/lunar-starship.jpg);
+}
+/*BUTTONS*/
+button.btn {
+    position: absolute;
+    min-width: 130px;
+    padding: 0.7em 1.5em;
+    margin: 30px 0 0;
+    border: 2px solid #f3f3f3;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: 400;
+    color: #f3f3f3;
+    background: transparent;
+    z-index: 1;
+    transition: all .6s cubic-bezier(.19,1,.22,1);
+}
+/*button hover animation*/
+.btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+    z-index: -1;
+    transform: scale3d(1,0,1);
+    transform-origin: top center;
+    transition: transform .6s cubic-bezier(.19,1,.22,1);
+}
+.btn:hover::after {
+    transform: scale3d(1,1,1);
+    transform-origin: bottom center;
+}
+.btn:hover {
+    color:#000;
+}
+/*BUTTONS END*/
+/*footer*/
+footer {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    font-style: normal;
+    color: #979797;
+    padding: 20px 0;
+    font-size: 0.7em;
+}
+footer > p a {
+    text-decoration: none;
+    color: #f3f3f3;
+    font-weight: 400;
+    margin: 2em 1em;
+}
+footer > p a:hover{
+    color: #979797;
+}
+/*MEDIA QUERIES*/
+@media (max-width: 1200px){
+    .video-container {
+        top: -58em;
+    }
+    .inner-left-bottom,.inner-left-middle,.inner-left-top,.inner-right-bottom,.inner-right-middle,.inner-right-top {
+    width: 40%;
+    }
+    .inner-left-bottom {
+        margin-top: 30%;
+    }
+    .inner-right-bottom {
+        margin-top: 20%;
+    }
+    .inner-right-middle {
+        margin-top: 5%;
+    }
+}
+@media (max-width: 980px){
+    .video-container {
+        top: -60em;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    .inner-right-middle {
+        margin-top: 12%;
+    }
+    .inner-left-middle {
+        margin-top: 17%;
+    }
+}
+@media (max-width: 960px){
+    #navbar .nav-links {
+        display:none;
+    }
+    .logo {
+        margin: 2% 49% -4%;
+    }
+    #side-menu-nav .nav-links li.primary {
+        display: flex;
+        flex-direction: column;
+    }
+    .poster * {
+        visibility: visible;
+    }
+    .video-container > video {
+        visibility: hidden;
+    }
+}
+@media (max-width: 700px){
+    .inner-left-middle {
+        width: 30%;
+    }
+    .video-container {
+        margin-top:22%;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h3 {
+    font-size: 1.25em;
+    }
+    p {
+    font-size: 1em;
+    }
+}
+@media (max-width: 600px){
+    .inner-left-middle {
+        display: none;
+    }
+    .video-container {
+        position: relative;
+        margin: 25em 0 0 0;
+        height: 99%;
+        width: 100%;
+    }
+    .poster {
+        height: 100%;
+        margin: 0;
+        object-fit: scale-down;
+    }
+}
+/*ANIMATIONS*/
+
+@keyframes slide-from-top {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+      }
+}
+@keyframes nav-bg-slide-down{
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+            transform:scaleY(1);
+    }
+
+}
+@keyframes nav-bg-slide-up{
+    100% {
+        transform: scaleY(0);
+    }
+    0% {
+        transform:scaleY(1);
+    }
+
+}
+/*animation classes ----- toggled by JS*/
+/*top to bottom sliding animation*/
+.slide-from-top {
+    animation: slide-from-top 1s ease-in-out 0.1s forwards;
+}
+/*side nav slide out*/
+.side-menu-visible {
+    width: 17.5em!important;
+}
+/*to nav sliding up and down*/
+.header-bg-slide-down{
+    animation: nav-bg-slide-down 0.8s cubic-bezier(.42,.33,.3,.83) 0.1s forwards;
+    transform-origin: top;
+    transition: transform;
+}
+.header-bg-slide-up{
+    animation: nav-bg-slide-up 0.8s cubic-bezier(.42,.33,.3,.83) 0.1s backwards;
+    transform-origin: top;
+    transition: transform;
+}

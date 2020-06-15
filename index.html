@@ -1,0 +1,126 @@
+<!--Recreating SpaceX navbar with animation-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="hamburger.css">
+	<script src="nav.js" type="text/javascript" charset="utf-8" async defer></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SpaceY</title>
+</head>
+<body><!--wrapper-->
+	<div class="container">
+		<!--header / navbar wrapper-->
+		<header id="header" class="header">
+			<div class="header-bg"></div>
+			<div class="header-inner">
+
+				<nav id="navbar" class=
+				"navbar">
+					<p class="logo">SpaceY</p>
+					<ul class="nav-links">
+						<li class="nav-item"><a href="#">Falcon 9</a></li>
+						<li class="nav-item"><a href="#">Falcon Heavy</a></li>
+						<li class="nav-item"><a href="#">Dragon</a></li>
+						<li class="nav-item"><a href="#">Starship</a></li>
+						<li class="nav-item"><a href="#">Human Spaceflight</a></li>
+						<li class="nav-item"><a href="#">Rideshare</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div id="side-menu">
+				<div id="side-menu-nav">
+					<ul class="nav-links animate-nav">
+						<!--top menu nav links are duplicated to be displayed on small screens-->
+						<li class="nav-item primary"><a href="#">Falcon 9</a></li>
+						<li class="nav-item primary"><a href="#">Falcon Heavy</a></li>
+						<li class="nav-item primary"><a href="#">Dragon</a></li>
+						<li class="nav-item primary"><a href="#">Starship</a></li>
+						<li class="nav-item primary"><a href="#">Human Spaceflight</a></li>
+						<li class="nav-item primary"><a href="#">Rideshare</a></li>
+						<!--default side menu nav links-->
+						<li class="nav-item secondary"><a href="#">Mission</a></li>
+						<li class="nav-item secondary"><a href="#">Launches</a></li>
+						<li class="nav-item secondary"><a href="#">Careers</a></li>
+						<li class="nav-item secondary"><a href="#">Updates</a></li>
+						<li class="nav-item secondary"><a href="#" rel="noopener" target="_blank">Shop</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--hamburger button-->
+			<button class="hamburger hamburger--collapse" type="button">
+			  <span class="hamburger-box">
+			    <span class="hamburger-inner"></span>
+			  </span>
+			</button>
+		</div>
+	
+		</header>
+		<!-- /header -->
+		<main>
+			<div class="section feature">
+				<div class="background"></div>
+				<div class="section-inner">
+					<div class="inner-left-bottom">
+						<h3>Recent launch</h3>
+						<h1>Starlink mission</h1>
+						<a href="#"><button class="btn" type="button" >Watch replay</button></a>
+					</div>
+				</div>
+			</div>
+			<div class="section dragon-crew">
+				<div class="background"></div>
+				<div class="section-inner">
+					<div class="inner-right-bottom">
+						<h1>RETURNING HUMAN SPACEFLIGHT TO THE UNITED STATES</h1>
+						<a href="#"><button class="btn" type="button" >Learn more</button></a>
+					</div>
+				</div>
+			</div>						
+			<div class="section">
+				<div class="background"></div>
+				<div class="section-inner">
+					<div class="inner-left-middle">
+						<h1>Crew Dragon docking simulator</h1>
+						<p>Crew Dragon is designed to autonomously dock and undock with the International Space Station. However, the crew can take manual control of the spacecraft if necessary.
+						</p>
+						<a href="#"><button class="btn" type="button" >Learn more</button></a>
+					</div>
+					<div class="video-container">
+						<picture class="poster">
+							<source srcset="img/poster.jpg" type="image/jpeg">
+								<img srcset="img/poster.jpg" alt="docking">
+						</picture>
+						<video autobuffer autoplay loop muted>
+							<source src="media/docking-simulator.mp4">
+						</video>
+					</div>
+				</div>
+			</div>
+			<div class="section lunar-starship">
+				<div class="background"></div>
+				<div class="section-inner">
+					<div class="inner-right-middle">
+						<h3>05/01/20</h3>
+						<h1>NASA SELECTS LUNAR OPTIMIZED STARSHIP</h1>
+						<p>NASA selected SpaceX to develop a lunar optimized Starship to transport crew between lunar orbit and the surface of the Moon as part of NASA’s Artemis program.</p>
+						<a href="#"><button class="btn" type="button" >Learn more</button></a>
+					</div>
+				</div>
+			</div>	
+		</main>
+		<footer>
+			<p>
+					<span>SpaceY © 2020</span>
+					<a href="#" rel="noopener" target="_blank" class="social">TWITTER</a>
+					<a href="#" rel="noopener" target="_blank" class="social">YOUTUBE</a>
+					<a href="#" rel="noopener" target="_blank" class="social">INSTAGRAM</a>
+					<a href="#" rel="noopener" target="_blank" class="social">FLICKR</a>
+					<a href="#" rel="noopener" target="_blank" class="social">LINKEDIN</a>
+					<a href="#" target="_blank" class="social">PRIVACY POLICY</a>
+				</p>
+		</footer>
+	</div>
+</body>
+</html>
